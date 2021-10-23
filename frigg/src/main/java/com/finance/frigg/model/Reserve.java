@@ -18,19 +18,19 @@ import lombok.Setter;
 @Entity
 @Table(name = "reserve")
 public class Reserve {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String title;
-	
+
 	private String description;
-	
+
 	private Double totalAmount;
-	
+
 	private Double totalSpent;
-	
+
 	private String color;
-	
+
 }

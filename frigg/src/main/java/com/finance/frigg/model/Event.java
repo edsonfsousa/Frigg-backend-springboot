@@ -22,23 +22,23 @@ import lombok.Setter;
 @Entity
 @Table(name = "event")
 public class Event {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String title;
-	
+
 	private String description;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate startDate;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate endDate;
-	
+
 	private Double totalSpent;
-	
+
 	private String color;
-	
+
 }

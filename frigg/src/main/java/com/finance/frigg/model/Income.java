@@ -22,14 +22,14 @@ import lombok.Setter;
 @Entity
 @Table(name = "income")
 public class Income {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate date;
-	
+
 	private Double value;
-	
+
 }
