@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -18,25 +19,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "event")
-public class Event {
+@Table(name = "spent")
+public class Spent {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@JsonFormat(pattern="dd/MM/yyyy")
+	private LocalDate date;
+	
 	private String title;
 	
-	private String description;
+	private Double value;
 	
-	@JsonFormat(pattern="dd/MM/yyyy")
-	private LocalDate startDate;
+	@ManyToOne
+	private Event event;
 	
-	@JsonFormat(pattern="dd/MM/yyyy")
-	private LocalDate endDate;
-	
-	private Double totalSpent;
-	
-	private String color;
+	@ManyToOne
+	private Reserve reserve;
 	
 }

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Reserves")
+@Table(name = "reserve")
 public class Reserve {
 	
 	@Id
@@ -30,4 +30,5 @@ public class Reserve {
 	private Double totalSpent;
 	
 	private String color;
+	
 }
