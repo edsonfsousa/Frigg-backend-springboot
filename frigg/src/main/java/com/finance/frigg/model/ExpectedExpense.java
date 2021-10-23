@@ -18,25 +18,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "event")
-public class Event {
+@Table(name = "expected_expense")
+public class ExpectedExpense {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String title;
-	
-	private String description;
+	private boolean payed;
 	
 	@JsonFormat(pattern="dd/MM/yyyy")
-	private LocalDate startDate;
+	private LocalDate creationDate;
 	
 	@JsonFormat(pattern="dd/MM/yyyy")
-	private LocalDate endDate;
+	private LocalDate dischargeDate;
 	
-	private Double totalSpent;
-	
-	private String color;
+	private Double value;
 	
 }
