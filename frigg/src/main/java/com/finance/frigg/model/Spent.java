@@ -12,31 +12,33 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "spent")
 public class Spent {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
+	private Long id;
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate date;
-	
+
 	private String title;
-	
+
 	private Double value;
-	
+
 	@ManyToOne
 	private Event event;
-	
+
 	@ManyToOne
 	private Reserve reserve;
-	
+
 }

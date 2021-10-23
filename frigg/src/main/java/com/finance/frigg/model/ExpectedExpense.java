@@ -11,28 +11,30 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "expected_expense")
 public class ExpectedExpense {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
+	private Long id;
+
 	private boolean payed;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate creationDate;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate dischargeDate;
-	
+
 	private Double value;
-	
+
 }

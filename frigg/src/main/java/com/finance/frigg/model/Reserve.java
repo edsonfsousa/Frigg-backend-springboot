@@ -7,28 +7,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "reserve")
 public class Reserve {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
+	private Long id;
+
 	private String title;
-	
+
 	private String description;
-	
+
 	private Double totalAmount;
-	
+
 	private Double totalSpent;
-	
+
 	private String color;
-	
+
 }
