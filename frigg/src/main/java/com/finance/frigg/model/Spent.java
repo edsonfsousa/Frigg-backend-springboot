@@ -23,22 +23,22 @@ import lombok.Setter;
 @Entity
 @Table(name = "spent")
 public class Spent {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate date;
-	
+
 	private String title;
-	
+
 	private Double value;
-	
+
 	@ManyToOne
 	private Event event;
-	
+
 	@ManyToOne
 	private Reserve reserve;
-	
+
 }
