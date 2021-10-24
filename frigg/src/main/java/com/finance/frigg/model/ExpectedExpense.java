@@ -22,19 +22,19 @@ import lombok.Setter;
 @Entity
 @Table(name = "expected_expense")
 public class ExpectedExpense {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private boolean payed;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate creationDate;
-	
+
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate dischargeDate;
-	
+
 	private Double value;
-	
+
 }
